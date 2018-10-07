@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="rpsstyles.css">
+   </head>
+   <body>
+     <div class="dropdown">
+       <button class="dropbtn">Pick your choice</button>
+       <div class="dropdown-content">
+         <a onclick="playerSelection('Rock')" href="#">Rock</a>
+         <a onclick="playerSelection('Paper')" href="#">Paper</a>
+         <a onclick="playerSelection('Scissors')" href="#">Scissors</a>
+       </div>
+     </div>
+          
+     <script>
+        var gamearray = ["Rock", "Paper", "Scissors"];
+        var playercomp, verdict;
+
+        function computerPlay() {
+          var currentIndex = 3, temporaryValue, randomIndex;
+          // While there remain elements to shuffle...
+          while (currentIndex !== 0) {
+                // Pick a remaining element...
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+                // And swap it with the current element.
+                temporaryValue = gamearray[currentIndex];
+                gamearray[currentIndex] = gamearray[randomIndex];
+                gamearray[randomIndex] = temporaryValue;
+          }
+          return gamearray[currentIndex];
+        }
+
+      function playerSelection(playerval) {
+        playercomp = computerPlay();
+        if (playerval==playercomp) {verdict="IT'S A TIE!!!";}
+        else {
+             if ((playerval=="Rock" && playercomp=="Paper") || (playerval=="Paper" && playercomp=="Scissors")
+                 (playerval=="Scissors" && playercomp=="Rock")) {verdict="YOU LOSE!!!";}
+             else {verdict="YOU WIN!!!";}
+        }
+        window.alert("Your choice: " + playerval + "     Computer's: " + playercomp + " \n" + verdict);
+       }
+ 
+       
+     </script>
+    
+   </body>
+</html>

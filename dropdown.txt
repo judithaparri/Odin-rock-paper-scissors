@@ -1,0 +1,8 @@
+<div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn">Select here</button> 
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#">Rock</a>
+            <a href="#">Paper</a>
+            <a href="#">Scissors</a>
+          </div>
+        </div>
